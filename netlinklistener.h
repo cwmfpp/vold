@@ -1,0 +1,31 @@
+#ifndef NETLINKLISTENER_H
+#define NETLINKLISTENER_H
+
+
+#include "socketlistener.h"
+
+class NetlinkEvent;
+
+class NetlinkListener : public SocketListener {
+    char mBuffer[64 * 1024] __attribute__((aligned(4)));
+    int mFormat;
+
+public:
+    static const int NETLINK_FORMAT_ASCII = 0;
+    static const int NETLINK_FORMAT_BINARY = 1;
+    static const int NETLINK_FORMAT_BINARY_UNICAST = 2;
+
+#if 1
+    /* temporary version until we can get Motorola to update their
+     * ril.so.  Their prebuilt ril.so is using this private class
+     * so changing the NetlinkListener() constructor breaks their ril.
+     */
+    NetlinkListener(int socket);
+#else
+    NetlinkListener(int socket, int format = NETLINK_FORMAT_ASCII);
+#endif
+    //virtual ~NetlinkListener() {}
+
+};
+
+#endif // NETLINKLISTENER_H
