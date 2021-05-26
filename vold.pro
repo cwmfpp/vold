@@ -15,9 +15,17 @@ SOURCES += \
         socketlistener.cpp
 
 HEADERS += \
+    log.h \
+    log.h \
     logging.h \
     netlinkevent.h \
+    netlinkhandler.h \
+    netlinkhandler.h \
     netlinklistener.h \
     netlinkmanager.h \
     socketclient.h \
     socketlistener.h
+
+DISTFILES += \
+    README.md \
+    vold.pro.user
