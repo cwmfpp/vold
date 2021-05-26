@@ -9,6 +9,7 @@ SOURCES += \
         logging.cpp \
         main.cpp \
         netlinkevent.cpp \
+        netlinkhandler.cpp \
         netlinklistener.cpp \
         netlinkmanager.cpp \
         socketclient.cpp \
@@ -19,7 +20,6 @@ HEADERS += \
     log.h \
     logging.h \
     netlinkevent.h \
-    netlinkhandler.h \
     netlinkhandler.h \
     netlinklistener.h \
     netlinkmanager.h \
