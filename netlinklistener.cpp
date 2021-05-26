@@ -42,13 +42,16 @@ ssize_t uevent_kernel_recv(int socket, void* buffer, size_t length, bool require
 
     *uid = -1;
     ssize_t n = TEMP_FAILURE_RETRY(recvmsg(socket, &hdr, 0));
+    SLOGE("recvmsg n=%ld", n);
     if (n <= 0) {
+        SLOGE("call recvmsg failed n=%ld", n);
         return n;
     }
 
     struct cmsghdr* cmsg = CMSG_FIRSTHDR(&hdr);
     if (cmsg == NULL || cmsg->cmsg_type != SCM_CREDENTIALS) {
         /* ignoring netlink message with no sender credentials */
+        SLOGE("call CMSG_FIRSTHDR failed");
         goto out;
     }
 
@@ -57,10 +60,12 @@ ssize_t uevent_kernel_recv(int socket, void* buffer, size_t length, bool require
 
     if (addr.nl_pid != 0) {
         /* ignore non-kernel */
-        goto out;
+        SLOGE("failed addr.nl_pid=%d", addr.nl_pid);
+        //goto out; //cwm del
     }
     if (require_group && addr.nl_groups == 0) {
         /* ignore unicast messages when requested */
+        SLOGE("failed require_group && addr.nl_groups");
         goto out;
     }
 

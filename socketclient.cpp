@@ -17,13 +17,7 @@
 //#include <log/log.h>
 #include "socketclient.h"
 
-#ifndef SLOGW
-#define SLOGW(...)
-#endif
-
-#ifndef SLOGE
-#define SLOGE(...)
-#endif
+#include "log.h"
 
 #define FALLTHROUGH_INTENDED do {} while (0)
 

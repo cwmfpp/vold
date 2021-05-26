@@ -21,18 +21,7 @@
 #include "socketclient.h"
 //#include <utils/CallStack.h>
 
-
-#ifndef SLOGW
-#define SLOGW(...)
-#endif
-
-#ifndef SLOGE
-#define SLOGE(...)
-#endif
-
-#ifndef SLOGV
-#define SLOGV(...)
-#endif
+#include "log.h"
 
 #define CtrlPipe_Shutdown 0
 #define CtrlPipe_Wakeup   1

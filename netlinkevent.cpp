@@ -22,17 +22,7 @@
 #include <sys/types.h>
 
 
-#ifndef SLOGW
-#define SLOGW(...)
-#endif
-
-#ifndef SLOGE
-#define SLOGE(...)
-#endif
-
-#ifndef SLOGD
-#define SLOGD(...)
-#endif
+#include "log.h"
 
 /*cwm add*/
 enum {
@@ -614,6 +604,7 @@ bool NetlinkEvent::parseNdUserOptMessage(const struct nlmsghdr *nh) {
 bool NetlinkEvent::parseBinaryNetlinkMessage(char *buffer, int size) {
     struct nlmsghdr *nh;
 
+    SLOGD("chenwenmin ");
     for (nh = (struct nlmsghdr *) buffer;
          NLMSG_OK(nh, (unsigned) size) && (nh->nlmsg_type != NLMSG_DONE);
          nh = NLMSG_NEXT(nh, size)) {
@@ -687,6 +678,7 @@ bool NetlinkEvent::parseAsciiNetlinkMessage(char *buffer, int size) {
     int param_idx = 0;
     int first = 1;
 
+    SLOGD("chenwenmin buffer=%s", buffer);
     if (size == 0)
         return false;
 

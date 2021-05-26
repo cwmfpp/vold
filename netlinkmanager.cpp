@@ -16,6 +16,7 @@
 #include <sys/types.h> //cwm
 #include <unistd.h> //cwm
 
+
 #include "logging.h"
 
 NetlinkManager* NetlinkManager::sInstance = NULL;
@@ -68,7 +69,7 @@ int NetlinkManager::start() {
         goto out;
     }
 
-#if 0
+#if 1
     mHandler = new NetlinkHandler(mSock);
     if (mHandler->start()) {
         PLOG(ERROR) << "Unable to start NetlinkHandler";

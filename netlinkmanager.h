@@ -2,11 +2,14 @@
 #define NETLINKMANAGER_H
 
 
+#include "netlinkhandler.h" //cwm add
+
 class NetlinkManager
 {
 
 private:
   static NetlinkManager* sInstance;
+  NetlinkHandler* mHandler;
   int mSock;
 
 public:
