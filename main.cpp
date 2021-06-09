@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 #include "netlinkmanager.h"
+#include "test.h"
 
 using namespace std;
 
@@ -22,6 +23,8 @@ int main()
         //PLOG(ERROR) << "Unable to start NetlinkManager";
         //exit(1);
     }
+
+    test();
 
     while (1) {
         sleep(1);

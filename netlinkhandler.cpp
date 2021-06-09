@@ -24,6 +24,19 @@ int NetlinkHandler::stop() {
 }
 
 void NetlinkHandler::onEvent(NetlinkEvent* evt) {
+    const char* subsys = evt->getSubsystem();
+
+    if (!subsys) {
+        SLOGV("chenwenmin No subsystem found in netlink event");//cwm mod
+        return;
+    }
+
+    SLOGV("chenwenmin subsys=%s", subsys);
+    if (std::string(subsys) == "block") {
+        SLOGV("chenwenmin block");//
+        //vm->handleBlockEvent(evt);//cwm del todo
+    }
+
 #if 0
     //VolumeManager* vm = VolumeManager::Instance();//cwm del todo
     const char* subsys = evt->getSubsystem();

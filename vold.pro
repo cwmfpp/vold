@@ -13,7 +13,8 @@ SOURCES += \
         netlinklistener.cpp \
         netlinkmanager.cpp \
         socketclient.cpp \
-        socketlistener.cpp
+        socketlistener.cpp \
+        test.cpp
 
 HEADERS += \
     log.h \
@@ -24,7 +25,8 @@ HEADERS += \
     netlinklistener.h \
     netlinkmanager.h \
     socketclient.h \
-    socketlistener.h
+    socketlistener.h \
+    test.h
 
 DISTFILES += \
     README.md \
