@@ -31,6 +31,15 @@ void func2()
     for (it = iSet.begin(); it != iSet.end(); it++) {
         cout << "value = " << *it << endl;
     }
+
+    if (iSet.find(1) == iSet.end()) {
+        cout << "not find 1" << endl;
+    }
+
+    if (iSet.find(100) != iSet.end()) {
+        cout << "find 100" << endl;
+    }
+
     return;
 }
 
