@@ -6,17 +6,21 @@ CONFIG -= qt
 LIBS += -pthread
 
 SOURCES += \
+        disk.cpp \
         logging.cpp \
         main.cpp \
         netlinkevent.cpp \
         netlinkhandler.cpp \
         netlinklistener.cpp \
         netlinkmanager.cpp \
+        partition.cpp \
         socketclient.cpp \
         socketlistener.cpp \
+        storagemanager.cpp \
         test.cpp
 
 HEADERS += \
+    disk.h \
     log.h \
     log.h \
     logging.h \
@@ -24,8 +28,10 @@ HEADERS += \
     netlinkhandler.h \
     netlinklistener.h \
     netlinkmanager.h \
+    partition.h \
     socketclient.h \
     socketlistener.h \
+    storagemanager.h \
     test.h
 
 DISTFILES += \
